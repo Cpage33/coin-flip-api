@@ -80,6 +80,7 @@ HTTP.createServer((req, res) => {
     res.writeHead(404);
     res.end = "Error:404 \nNo such endpoint";
   }
-}).listen(PORT, () =>
-  console.log("Assignment 4 service running on port " + PORT)
+}).listen(
+  PORT,
+  () => console.log("Assignment 4 service running on port " + PORT) //Show on console code ran
 );
