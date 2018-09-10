@@ -65,12 +65,12 @@ HTTP.createServer((req, res) => {
     } else {
       //Working all correct inputs add the numbers
       let sumResponse = {
-        First: myArray[2],
-        Second: myArray[3],
-        Sum: add(myArray[2], myArray[3])
+        first: myArray[2],
+        second: myArray[3],
+        sum: add(myArray[2], myArray[3])
       };
       res.writeHead(200, {
-        "Content-Type": "JSON object",
+        "Content-Type": "json object",
         "Content-Length": Buffer.byteLength(JSON.stringify(sumResponse))
       });
       res.end(JSON.stringify(sumResponse)); //json responses need to be Stringified for easy interpretation
