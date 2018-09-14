@@ -1,0 +1,22 @@
+{
+  "name": "cpsc_3900_page",
+  "version": "1.0.0",
+  "description": "**Edit a file, create a new file, and clone from Bitbucket in under 2 minutes**",
+  "main": "index.js",
+  "scripts": {
+    "start": "node app",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://cpage33@bitbucket.org/cpage33/cpsc_3900_page.git"
+  },
+  "author": "Conner Page",
+  "license": "ISC",
+  "homepage": "https://bitbucket.org/cpage33/cpsc_3900_page#readme",
+  "dependencies": {
+    "express": "^4.16.3",
+    "lowdash": "^1.2.0",
+    "save": "^2.3.2"
+  }
+}
