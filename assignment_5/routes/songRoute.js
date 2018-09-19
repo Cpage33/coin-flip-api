@@ -21,6 +21,20 @@ router.get("/", (req, res) => {
   var songName = req.query.name;
   res.json(songController.returnFilteredSong(songName));
 });
+
+/**
+ * GET all songs
+ * allows a query parameter to allow retrieving inactive songs
+ * ex. http://localhost:5000/songs?active=false
+ */
+router.get("/", (req, res) => {
+  //app.js is going to call this as /songs, so we want this at the root of song
+
+  //query param ?active=songActive is retrieve by req.query.name
+  var songInactive = req.query.active;
+  res.json(songController.returnFilteredInactive(songInactive));
+});
+
 router.get("/:id", (req, res) => {
   let id = req.params.id;
 

@@ -10,8 +10,9 @@ function returnFilteredSong(songName) {
 
   //verifying songName is aquery param &  is valid
   if (songName != null && songName != undefined && songName.length > 0) {
-    if (_.filter(returnData, {active: true})){  //attempt to filter out the false
-    return _.filter(returnData, { name: songName });
+    if (_.filter(returnData, { active: true })) {
+      //attempt to filter out the false
+      return _.filter(returnData, { name: songName });
     }
   } else {
     //we haven't specified a URL param for "Name" (?name=....)
@@ -19,8 +20,30 @@ function returnFilteredSong(songName) {
     return returnData;
   }
 }
-let returnUnfilteredList = () => SongLog;
-let returnSongById = id => _.find(SongLog, { id: id });
+
+/**
+ * returnFilteredInactive
+ * @param {*} songInactive - String. retrieved from an unchecked query parameter in the GET /songs endpoint
+ */
+function returnFilteredInactive(songInactive) {
+  var returnData = songModel;
+
+  //verifying songInactive is a query param &  is valid
+  if (
+    songInactive != null &&
+    songInactive != undefined &&
+    songInactive.length > 0
+  ) {
+    return _.filter(returnData, { active: false });
+  } else {
+    //we haven't specified a URL param for "Name" (?name=....)
+    //returning an unfiltered array
+    return returnData;
+  }
+}
+
+let returnUnfilteredList = () => SongModel;
+let returnSongById = id => _.find(SongModel, { id: id });
 /**
  * findAndReturnSongById
  * Grabs song out of song collection based off matching id
@@ -43,3 +66,4 @@ module.exports.returnUnfilteredList = returnUnfilteredList;
 module.exports.returnFilteredSong = returnFilteredSong;
 module.exports.findAndReturnSongById = findAndReturnSongById;
 module.exports.returnSongById = returnSongById;
+module.exports.returnFilteredInactive = returnFilteredInactive;
