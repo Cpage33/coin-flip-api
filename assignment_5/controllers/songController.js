@@ -10,7 +10,9 @@ function returnFilteredSong(songName) {
 
   //verifying songName is aquery param &  is valid
   if (songName != null && songName != undefined && songName.length > 0) {
+    if (_.filter(returnData, {active: true})){  //attempt to filter out the false
     return _.filter(returnData, { name: songName });
+    }
   } else {
     //we haven't specified a URL param for "Name" (?name=....)
     //returning an unfiltered array
