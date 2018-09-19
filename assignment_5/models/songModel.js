@@ -35,14 +35,18 @@ var songList = [
     artist: "Guns N' Roses",
     active: true
   },
-  {id: 7,
+  {
+    id: 7,
     name: "Jingle Bell Rock",
     artist: "Bobby Helms",
-    active: false},
-    {id: 8,
-        name: "Three Feet of Water",
-        artist: "Brantley Gilbert",
-        active: true}
+    active: false
+  },
+  {
+    id: 8,
+    name: "Three Feet of Water",
+    artist: "Brantley Gilbert",
+    active: true
+  }
 ];
 
 module.exports = songList;
