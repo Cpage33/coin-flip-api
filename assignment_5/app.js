@@ -13,7 +13,7 @@ const app = EXPRESS(); //() important!
 //  ./ denotes that the path is in the same directory level as this file.
 let songRouter = require("./routes/songRoute");
 let healthRouter = require("./routes/healthRoute");
-const PORT = 5008;
+const PORT = 5000;
 
 //use logic defined in song router at http://localhost:5000/song
 app.use("/songs", songRouter);

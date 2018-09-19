@@ -25,7 +25,7 @@ router.get("/", (req, res) => {
 /**
  * GET all songs
  * allows a query parameter to allow retrieving inactive songs
- * ex. http://localhost:5000/songs?active=false
+ * ex. http://localhost:5000/songs?inactive=true
  */
 router.get("/", (req, res) => {
   //app.js is going to call this as /songs, so we want this at the root of song
