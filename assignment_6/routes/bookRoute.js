@@ -1,9 +1,7 @@
 "use strict";
 
 const express = require("express");
-
 var router = express.Router();
-
 var bookController = require("../controllers/bookController");
 
 router.get("/", (req, res) => {
@@ -12,12 +10,13 @@ router.get("/", (req, res) => {
 
 router.get("/:id", (req, res) => {
   let id = req.params.id;
-
+//If there is no id to return when get is called.
   if (!id) {
     res.status(400);
     res.json({ message: "invalid id parameter" });
-  } else {
+  } else { 
     let book = bookController.returnBookById(req.params.id);
+    //If there is no book to return when get is called.
     if (!book) {
       res.status(404);
       res.json({ message: "no record of a book was found with the id: " + id });
@@ -31,7 +30,7 @@ router.get("/:id", (req, res) => {
  * POST - add book
  * http://localhost:5000/book
  *
- * requires: jsonbody: {bookName: "string", author: "string", genre:"string", ageInYears: int}
+ * requires: jsonbody: {bookName: "string", author: "string", (genre:"string")optional, ageInYears: int}
  *
  */
 router.post("/", (req, res) => {
@@ -52,7 +51,7 @@ router.post("/", (req, res) => {
     res.json({
       error: "Invalid or no author was passed in with the json"
     });
-  } else if (id) {
+  } else if (id) { //Don't let them put their own ID
     res.status(400);
     res.json({
       error: "Invalid ID, You cannot add your own ID."
