@@ -10,7 +10,7 @@ let bookData = [
   },
   {
     id: "3bb702da-d415-48fc-88c7-a0de3dde3ccd",
-    bookName: "Percy Jackson and the Lightning Theif",
+    bookName: "Percy Jackson and the Lightning Thief",
     author: "Rick Riordan",
     genre: "Fantasy",
     ageInYears: 13

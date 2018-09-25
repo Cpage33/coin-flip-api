@@ -90,27 +90,6 @@ router.put("/:id", (req, res) => {
 
   //we're doing more logic than I would like in here, but it's ultimately to make it easier to display good errors
 
-  if (!id) {
-    res.status(400);
-    res.json({ error: "did not provide ID for PUT /book" });
-  } else if (!bookName) {
-    res.status(400);
-    res.json({ error: "invalid input for bookName field" });
-  } else if (!author) {
-    res.status(400);
-    res.json({ error: "invalid input for author field" });
-  } else if (!genre) {
-    res.status(400);
-    res.json({ error: "invalid input for genre field" });
-  } else if (!ageInYears && isNaN(ageInYears)) {
-    res.status(400);
-    res.json({ error: "invalid input (not numeric) for ageInYears field" });
-  } else {
-    let bookIndex = bookController.getBookIndex(id);
-    if (bookIndex < 0) {
-      res.status(404);
-      res.json({ error: "Book entry not found with id: " + id });
-    } else {
       //retrieving object to update
       let updateBook = bookController.getBookObjectByIndex(bookIndex);
 
@@ -127,9 +106,7 @@ router.put("/:id", (req, res) => {
       );
 
       res.json(finishedBook);
-    }
-  }
-});
+    });
 
 /**
  * http://localhost:5000/delete/:id (guid for id)
