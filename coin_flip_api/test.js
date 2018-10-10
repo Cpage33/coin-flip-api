@@ -14,16 +14,3 @@ describe("Should return random 1 or 0.", function() {
     }
   });
 });
-describe("Should return something?.", function() {
-  it("Should return something", function() {
-    let output = flipCoin;
-    expect(output).to.equals(1);
-  });
-});
-
-describe("Should return something else?.", function() {
-  it("Should return something else", function() {
-    let output = flipCoins;
-    expect(output).to.equals(1);
-  });
-});

@@ -13,7 +13,8 @@ const app = EXPRESS(); //() important!
 let coinRouter = require("./routes/coinRoute");
 let healthRouter = require("./routes/healthRoute");
 const PORT = 5000;
-
+const LOGGER = require("morgan");
+app.use(LOGGER("dev"));
 //use logic defined in song router at http://localhost:5000/coinflip
 app.use("/coinflip", coinRouter);
 
