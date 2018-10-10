@@ -3,18 +3,26 @@ var CoinFlip = require("../models/coinModel").CoinFlip;
 var CoinFlips = require("../models/coinModel").CoinFlips;
 
 /**
- * Return coinFlip heads or tails
- * @param {None} Coin Flips once
+ * Returns a random 1 or 0
  */
 
 let getRandomNumber = () => {
   let output = Math.round(Math.random());
   return output;
 };
+
+/**
+ * Will take the random 1 or 0 and turn it into a json with the side, the flipNum and the image.
+ */
 let flipCoin = () => {
   let coinFlip = new CoinFlip(getRandomNumber());
   return coinFlip;
 };
+
+/**
+ * Will take the flips and put them in an array
+ * @param {*} flips 
+ */
 let flipCoins = flips => {
   let coin = [];
   for (let i = 0; i < flips; i++) {
@@ -24,6 +32,10 @@ let flipCoins = flips => {
   }
   return coin;
 };
+/**
+ * Will take an array and calculate the outcomes. 
+ * @param {*} coin 
+ */
 let flipOutcome = coin => {
   let outcome = {};
   let heads = 0;
