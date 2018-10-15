@@ -1,5 +1,5 @@
 {
-  "name": "coin_flip_api",
+  "name": "coin-flip-api",
   "version": "1.0.0",
   "description": "",
   "main": "app.js",
@@ -11,7 +11,8 @@
     "chai": "^4.2.0"
   },
   "scripts": {
-    "test": "mocha"
+    "test": "mocha",
+    "start": "node app"
   },
   "author": "Conner Page",
   "license": "ISC"
