@@ -12,7 +12,7 @@ const app = EXPRESS(); //() important!
 //  ./ denotes that the path is in the same directory level as this file.
 let coinRouter = require("./routes/coinRoute");
 let healthRouter = require("./routes/healthRoute");
-const PORT = 5000;
+const PORT = process.env.PORT || 5000;
 
 //use logic defined in song router at http://localhost:5000/coinflip
 app.use("/coinflip", coinRouter);
