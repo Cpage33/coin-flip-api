@@ -23,7 +23,7 @@ router.get("/:flips", (req, res) => {
     res.status(400);
     res.json({ message: "Please enter a number between 1 and 29." });
   }
-  if(noLimit=="true"){
+  if (noLimit == "true") {
     res.json(coinController.calculateCoinFlips(flips));
   }
   if (flips > 30 || flips < 0) {
@@ -35,10 +35,9 @@ router.get("/:flips", (req, res) => {
     res.json({
       message: "Please enter an odd number to avoid a 50% flip outcome"
     });
-  } else{
+  } else {
     res.json(coinController.calculateCoinFlips(flips));
   }
-
 });
 
 module.exports = router;
